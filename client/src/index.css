@@ -84,7 +84,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: hsl(var(--background));
+  background: hsl(var(--border));
 }
 
 body::-webkit-scrollbar {
