@@ -86,9 +86,9 @@ const CreateEmployee = () => {
               <div className='flex gap-5'>
                 <label htmlFor="designation">Designation :</label>
                 <select className='block w-24 rounded-md p-1 text-white bg-slate-400' name="designation" id="designation" value={employee.designation} onChange={(e) => handleFormChange(e)} required>
-                  <option value="hr">HR</option>
-                  <option value="manager">Manager</option>
-                  <option value="sales">Sales</option>
+                  <option>HR</option>
+                  <option>Manager</option>
+                  <option>Sales</option>
                 </select>
               </div>
               <div className='flex gap-5'>
