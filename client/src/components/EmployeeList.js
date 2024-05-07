@@ -112,9 +112,9 @@ const EmployeeList = () => {
   };
 
   return (
-    <div>
+    <div className="text-white">
       <div className="flex justify-between items-center m-5">
-        <h4 className="text-base font-medium from-neutral-900 py-2 pr-2 rounded-lg">
+        <h4 className="text-base font-medium from-neutral-900 bg-slate-600 py-2 px-2 rounded-lg text-white text-center">
           Employees Count : {employees.length}
         </h4>
         <Link
@@ -126,7 +126,7 @@ const EmployeeList = () => {
       </div>
       <div className="m-5 flex flex-col gap-5">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div className="text-base font-medium">Filter</div>
+          <div className="text-base font-medium"></div>
           <div>
             <input
               className="rounded-md px-4 py-2 text-center bg-slate-700 text-white outline-none shadow-md"
@@ -136,9 +136,9 @@ const EmployeeList = () => {
             />
           </div>
         </div>
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 min-w-[1500px]">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+          <table className="w-full bg-slate-400 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400">
               <tr>
                 <th scope="col" className=" px-3 py-2 text-center">
                   Index
@@ -206,10 +206,10 @@ const EmployeeList = () => {
               {employeePerPage.map((employee, idx) => {
                 return (
                   <tr
-                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                    className="border-b dark:border-gray-700"
                     key={idx}
                   >
-                    <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
+                    <td className="px-2 py-2 font-medium text-orange-700 whitespace-nowrap dark:text-white text-center">
                       {idx + 1}
                     </td>
                     <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
@@ -223,24 +223,24 @@ const EmployeeList = () => {
                       />
                     </td>
                     <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
-                      {employee.name}
+                      <span className="text-red-500 font-extrabold text-xl">{employee.name.slice(0,1)}</span>{employee.name.slice(1)}
                     </td>
-                    <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
+                    <td className="px-2 py-2 font-medium underline text-blue-900 whitespace-nowrap dark:text-white text-center">
                       {employee.email}
                     </td>
                     <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                       {employee.mobile}
                     </td>
-                    <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
+                    <td className="px-2 py-2 font-medium capitalize text-yellow-900 whitespace-nowrap dark:text-white text-center">
                       {employee.designation}
                     </td>
-                    <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
+                    <td className="px-2 py-2 font-medium text-purple-900 whitespace-nowrap dark:text-white text-center">
                       {employee.gender}
                     </td>
-                    <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
+                    <td className="px-2 py-2 font-medium text-pink-900 whitespace-nowrap dark:text-white text-center">
                       {employee.course}
                     </td>
-                    <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
+                    <td className="px-2 py-2 font-medium text-cyan-700 whitespace-nowrap dark:text-white text-center">
                       <DateAndTime
                         dot={
                           employee.date
@@ -249,7 +249,7 @@ const EmployeeList = () => {
                         }
                       />
                     </td>
-                    <td>
+                    <td className="flex justify-center">
                       <label>
                         <p>{employee.active ? "Active" : "Deactivated"}</p>
                         <Switch
@@ -261,15 +261,15 @@ const EmployeeList = () => {
                       </label>
                     </td>
                     <td className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
-                      <div className="flex gap-4">
+                      <div className="flex gap-4 justify-center">
                         <Link
-                          className="text-green-400"
+                          className="bg-green-500 text-white px-3 p-1 rounded-md shadow-md"
                           to={`/edit_employee/${employee._id}`}
                         >
                           Edit
                         </Link>
                         <button
-                          className="text-red-400"
+                          className="text-white bg-red-500 p-1 rounded-md shadow-md"
                           onClick={() => HandleDltBtn(employee._id)}
                         >
                           Delete

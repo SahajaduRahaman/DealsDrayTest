@@ -56,9 +56,9 @@ const CreateEmployee = () => {
   }
 
   return (
-    <div className='flex flex-col h-screen'>
+    <div className='flex flex-col h-screen text-white'>
       <div className='flex justify-between p-5'>
-        <h1 className='text-base font-medium'>Create Employee</h1>
+        <h1 className='text-base font-medium from-neutral-900 bg-slate-600 py-2 px-2 rounded-lg text-white text-center'>Create Employee</h1>
         <button className='rounded-md px-4 py-2 text-center bg-sky-700 text-white outline-none shadow-md' onClick={HandleClick}>Dashboard</button>
       </div>
       <div>
@@ -67,13 +67,13 @@ const CreateEmployee = () => {
             <div className='flex justify-between gap-5'>
               <div className='flex flex-col w-full'>
                 <label htmlFor="name">Name :</label>
-                <input className='inline-block rounded-md p-2 text-base font-normal' type="text" id='name' value={employee.name} onChange={(e) => handleFormChange(e)} name="name" placeholder="Enter employee name..." required/>
+                <input className='bg-slate-400 text-amber-900 placeholder-amber-800 inline-block rounded-md p-2 text-base font-normal' type="text" id='name' value={employee.name} onChange={(e) => handleFormChange(e)} name="name" placeholder="Enter employee name..." required/>
 
                 <label htmlFor="email">Email :</label>
-                <input className='inline-block rounded-md p-2 text-base font-normal' type="email" id='email' value={employee.email} onChange={(e) => handleFormChange(e)} name="email" placeholder="Enter employee email..." required/>
+                <input className='bg-slate-400 text-amber-900 placeholder-amber-800 inline-block rounded-md p-2 text-base font-normal' type="email" id='email' value={employee.email} onChange={(e) => handleFormChange(e)} name="email" placeholder="Enter employee email..." required/>
 
                 <label htmlFor="mobile">Mobile :</label>
-                <input className='inline-block rounded-md p-2 text-base font-normal' type="tel" id='mobile' value={employee.mobile} onChange={(e) => handleFormChange(e)} name="mobile" placeholder="Enter mobile no without prefix..." required/>
+                <input className='bg-slate-400 text-amber-900 placeholder-amber-800 inline-block rounded-md p-2 text-base font-normal' type="tel" id='mobile' value={employee.mobile} onChange={(e) => handleFormChange(e)} name="mobile" placeholder="Enter mobile no without prefix..." required/>
 
               </div>
               <div className='flex flex-col gap-5'>
@@ -85,7 +85,7 @@ const CreateEmployee = () => {
             <div className='flex flex-col gap-5 mt-5'>
               <div className='flex gap-5'>
                 <label htmlFor="designation">Designation :</label>
-                <select className='block w-24 rounded-md p-1' name="designation" id="designation" value={employee.designation} onChange={(e) => handleFormChange(e)} required>
+                <select className='block w-24 rounded-md p-1 text-white bg-slate-400' name="designation" id="designation" value={employee.designation} onChange={(e) => handleFormChange(e)} required>
                   <option value="hr">HR</option>
                   <option value="manager">Manager</option>
                   <option value="sales">Sales</option>

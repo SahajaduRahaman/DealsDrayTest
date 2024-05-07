@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
     const filters = deepFilter ? JSON.parse(deepFilter) : {};
     const { sortBy, column } = filters || {};
 
+
     let query = Employee.find();
 
     if (sortBy && column) {

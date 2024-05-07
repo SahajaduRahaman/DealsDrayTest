@@ -31,7 +31,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 `text-center  text-white font-bold ${
-                  isActive ? "bg-green-500" : "bg-green-900"
+                  isActive ? "bg-orange-600" : "bg-sky-600"
                 } p-2 rounded-md items-center shadow-md`
               }
               to="/"
@@ -43,7 +43,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 `text-center  text-white font-bold ${
-                  isActive ? "bg-green-500" : "bg-green-900"
+                  isActive ? "bg-orange-600" : "bg-sky-600"
                 } p-2 rounded-md items-center shadow-md`
               }
               to="/employee_list"
