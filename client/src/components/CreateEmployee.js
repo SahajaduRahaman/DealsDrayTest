@@ -79,7 +79,7 @@ const CreateEmployee = () => {
               <div className='flex flex-col gap-5'>
                 <img className='w-40 rounded-md' src={employee.file ? URL.createObjectURL(employee.file) : "https://cdn.pixabay.com/photo/2023/07/04/19/43/man-8106958_1280.png"} alt="FilePic" />
                 <label className='text-base font-medium rounded-md px-4 py-2 text-center bg-sky-700 text-white outline-none shadow-md' htmlFor="file">Choose File</label>
-                <input className='hidden' type="file" name='file' id="file" onChange={(e) => setEmployee({...employee, [e.target.name] : e.target.files[0]})} required/>
+                <input className='hidden' type="file" accept="image/png, image/jpeg" name='file' id="file" onChange={(e) => setEmployee({...employee, [e.target.name] : e.target.files[0]})} required/>
               </div>
             </div>
             <div className='flex flex-col gap-5 mt-5'>
